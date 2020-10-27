@@ -36,7 +36,6 @@ export const Nav = styled.nav`
     
     a {
       margin-left: 5vw;
-      text-decoration: none;
       font-size: 1.2rem;
       font-weight: 400;
       color: ${marineBlueColor};
@@ -115,7 +114,6 @@ export const MobileMenu = styled.div`
   flex-direction: column;
 
   a {
-    text-decoration: none;
     font-size: 1.2rem;
     font-weight: 400;
     color: ${marineBlueColor};
