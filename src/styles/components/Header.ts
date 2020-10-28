@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { mustardColor, blueBerryColor } from '../colors';
 
 export const HeaderContainer = styled.header<{ src: String }>`
-  width: 100vw;
-  height: 44vh;
+  width: 100%;
+  height: 100%;
   position: relative;
 
   .bgContainer {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 44vh;
     background-image: ${({src}) => `url(${src})`};
     background-size: cover;
     background-position: center;
