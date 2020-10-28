@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { grainColor, mustardColor, marineBlueColor, darkAquaColor } from '../colors';
 
 export const Nav = styled.nav`
+  z-index: 10;
   width: 100vw;
   height: 7.5vh;
   padding: 5px 20px;
@@ -14,6 +15,7 @@ export const Nav = styled.nav`
   background-color: ${grainColor};
 
   .logo a {
+    z-index: 10;
     position: absolute;
     width: 12vw;
     display: inline-block;
@@ -34,6 +36,7 @@ export const Nav = styled.nav`
 `;
 
 export const DesktopMenu = styled.div`
+  z-index: 10;
   display: flex;
   
   a, button {
@@ -77,7 +80,7 @@ export const DesktopMenu = styled.div`
   }
 
   
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -134,12 +137,13 @@ export const HamburgerMenu = styled.div`
     }
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 769px) {
     display: none;
   }
 `;
 
 export const MobileMenu = styled.div`
+  z-index: 10;
   position: absolute;
   width: 100%;
   height: 100%;
