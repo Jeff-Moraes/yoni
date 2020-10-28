@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { grainColor, mustardColor, marineBlueColor } from '../colors';
+import { grainColor, mustardColor, marineBlueColor, darkAquaColor } from '../colors';
 
 export const Nav = styled.nav`
   width: 100vw;
@@ -106,20 +106,37 @@ export const MobileMenu = styled.div`
   height: 100%;
   background-color: ${grainColor};
 
-  transition: opacity 3s;
+  transition: opacity 1s;
 
   padding-top: 20vh;
 
   display: flex;
   flex-direction: column;
 
-  a {
+  a, p {
     font-size: 1.2rem;
     font-weight: 400;
     color: ${marineBlueColor};
     margin: 0 5vw;
-    padding: 2.5vh 0;
-    border-bottom: 1px solid ${marineBlueColor};
+    padding-top: 1.7vh;
     transition-delay: 2s;
+
+    & + a, & + p {
+      padding-top: 1.7vh;
+      padding-bottom: 0;
+      margin-top: 1.7vh;
+      border-top: 0.2px solid ${marineBlueColor};
+    }
+  }
+  
+  .subCateg {
+    font-size: 1rem;
+    font-weight: 300;
+    color: ${marineBlueColor};
+    margin: 0 5vw;
+    padding-top: 1.7vh;
+    border-top: none;
+    transition-delay: 2s;
+    border-bottom: none;
   }
 `;
