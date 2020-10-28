@@ -31,16 +31,54 @@ export const Nav = styled.nav`
     width: 30vw;
     transform: translateX(100%);
   }
+`;
 
-  .menuLinks {
-    
+export const DesktopMenu = styled.div`
+  display: flex;
+  
+  a, button {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: ${marineBlueColor};
+    padding: 10px;
+    margin-right: 5vw;
+  }
+
+  & > a:last-child {
+    margin-right: 0;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+  }
+
+  & > div {
+    position: relative;
+  }
+
+  .categories {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    background-color: ${grainColor};
+    padding: 10px 0;
+
     a {
-      margin-left: 5vw;
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: ${marineBlueColor};
-      padding: 10px;
+      padding: 10px 0;
+      margin: 0 10px;
+      font-size: 1rem;
+
+      & + a {
+        border-top: 1px dashed ${marineBlueColor};
+      }
     }
+  }
+
+  
+  @media (max-width: 700px) {
+    display: none;
   }
 `;
 
@@ -63,7 +101,6 @@ export const HamburgerMenu = styled.div`
     height: 3px;
     background: ${mustardColor};
     border-radius: 5px;
-    box-shadow: 0 2px 5px #fff;
     transition: .5s;
 
     &:before, &:after {
@@ -73,7 +110,6 @@ export const HamburgerMenu = styled.div`
       height: 3px;
       background: ${mustardColor};
       border-radius: 5px;
-      box-shadow: 0 2px 5px #fff;
       transition: .5s;
     }
     &:before {
@@ -87,7 +123,6 @@ export const HamburgerMenu = styled.div`
 
   .active {
     background: rgba(0,0,0,0);
-    box-shadow: 0 2px 5px rgba(0,0,0,0);
     
     &:before {
       top: 0;
@@ -97,6 +132,10 @@ export const HamburgerMenu = styled.div`
       top: 0;
       transform: rotate(135deg);
     }
+  }
+
+  @media (min-width: 700px) {
+    display: none;
   }
 `;
 
@@ -113,7 +152,7 @@ export const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
 
-  a, p {
+  a {
     font-size: 1.2rem;
     font-weight: 400;
     color: ${marineBlueColor};
@@ -121,11 +160,25 @@ export const MobileMenu = styled.div`
     padding-top: 1.7vh;
     transition-delay: 2s;
 
-    & + a, & + p {
+  }
+
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        border-top: 0.2px solid ${marineBlueColor};
+        padding-top: 1.7vh;
+        padding-bottom: 0;
+        margin-top: 1.7vh;
+    }
+
+    & + a {
+      border-top: 0.2px solid ${marineBlueColor};
       padding-top: 1.7vh;
       padding-bottom: 0;
       margin-top: 1.7vh;
-      border-top: 0.2px solid ${marineBlueColor};
     }
   }
   

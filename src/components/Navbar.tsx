@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import useWindowWidth from '../hooks/useWindowWidth';
-import { Nav, MobileMenu, HamburgerMenu } from '../styles/components/Navbar';
+import { Nav, MobileMenu, DesktopMenu, HamburgerMenu } from '../styles/components/Navbar';
 
 export default function Navbar() {
-  const windowChecker = useWindowWidth();
   const [ showMobileMenu, setShowMobileMenu ] = useState(false);
   const [ showCategories, setShowCategories ] = useState(false);
 
@@ -20,36 +18,67 @@ export default function Navbar() {
     { name: "Gravidez e Maternidade", slug: "gravidez-e-maternidade" },
   ];
 
-  const MenuLinks = [
+  const linksMenu = [
     { name: "Sobre nós", slug: "sobre"},
     { name: "Assuntos", slug: "assuntos", subLinks: categories},
     { name: "Enquetes", slug: "enquetes"}
   ];
 
-  return (
-    <>
-      <MobileMenu style={{ opacity: showMobileMenu ? 1 : 0 }}>
-        { MenuLinks.map((el) => (
-          el.subLinks ? (
-            <>
-              <p key={el.name}>
-                {el.name}
-              </p>
-              {
-                el.subLinks.map(subCateg => ( 
-                  <Link key={subCateg.slug} href={`/category/${subCateg.slug}`}>
-                    <a className="subCateg">{subCateg.name}</a>
-                  </Link>
-                ))
-              }
-            </>
-          ) : (
-            <Link key={el.name} href={`/${el.slug}`}>
+  const mobileMenu = (
+    <MobileMenu>
+      { linksMenu.map((el) => (
+        el.subLinks ? (
+          <div key={el.name}>
+            <Link href={`/${el.slug}`}>
               <a>{el.name}</a>
             </Link>
-          ))
-        )}
-      </MobileMenu>
+            {
+              el.subLinks.map(subCateg => ( 
+                <Link key={subCateg.slug} href={`/${el.slug}/${subCateg.slug}`}>
+                  <a className="subCateg">{subCateg.name}</a>
+                </Link>
+              ))
+            }
+          </div>
+        ) : (
+          <Link key={el.name} href={`/${el.slug}`}>
+            <a>{el.name}</a>
+          </Link>
+        ))
+      )}
+    </MobileMenu>
+  )
+
+  const desktopMenu = (
+    <DesktopMenu>
+      { linksMenu.map((el) => (
+        el.subLinks ? (
+          <div key={el.name}>
+            <button key={el.name} onClick={() => setShowCategories(!showCategories)} >
+              {el.name}
+            </button>
+            { showCategories && (
+              <div className="categories">
+                { categories.map(category => ( 
+                  <Link key={category.slug} href={`/${el.slug}/${category.slug}`}>
+                    <a className="category">{category.name}</a>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <Link key={el.name} href={`/${el.slug}`}>
+            <a>{el.name}</a>
+          </Link>
+        ))
+      )}
+    </DesktopMenu>
+  )
+
+  return (
+    <>
+      { showMobileMenu && mobileMenu}
       <Nav>
         <Link href="/">
           <div className={showMobileMenu ? "logo active" : "logo"}>
@@ -58,20 +87,10 @@ export default function Navbar() {
             </a>
           </div>
         </Link>
-        { windowChecker ? (
-          <HamburgerMenu onClick={() => setShowMobileMenu(!showMobileMenu)}>
-            <span className={showMobileMenu ? "close active" : "close"} />
-          </HamburgerMenu>
-        ) :  (
-          <div className="menuLinks">
-            {MenuLinks.map((el) => (
-                <Link key={el.name} href={`/${el.slug}`}>
-                  <a>{el.name}</a>
-                </Link>
-              )
-            )}
-          </div>
-        )}
+        <HamburgerMenu onClick={() => setShowMobileMenu(!showMobileMenu)}>
+          <span className={showMobileMenu ? "close active" : "close"} />
+        </HamburgerMenu>
+        {desktopMenu}
       </Nav>
     </>
   );
