@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { grainColor, marineBlueColor } from '../colors';
 
 export const CategoriesContainer = styled.div`
-  padding: 0 20px;
-  margin-bottom: 40px;
+  padding: 100px 20px 0;
 
   h1 {
     font-size: 1.25rem;
@@ -18,6 +17,11 @@ export const CategoriesContainer = styled.div`
   .categoriesList {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+
+  @media (min-width: 899px) {
+    padding-top: 10vh;
   }
 
   @media (min-width: 360px) and (max-width: 680px) {

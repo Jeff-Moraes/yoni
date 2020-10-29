@@ -3,7 +3,7 @@ import { marineBlueColor, mustardColor, blueBerryColor } from '../colors';
 
 export const HighlightsContainer = styled.section`
   width: 100%;
-  padding: 100px 0;
+  padding-top: 30px;
 
   h1 {
     font-size: 1.25rem;
@@ -100,9 +100,5 @@ export const HighlightsContainer = styled.section`
         }
       }
     }
-  }
-
-  @media (min-width: 899px) {
-    padding: 10vh 0 7vh;
   }
 `;
