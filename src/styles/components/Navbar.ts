@@ -61,10 +61,11 @@ export const DesktopMenu = styled.div`
   }
 
   .categories {
+    z-index: 10;
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 50px;
+    top: 40px;
     background-color: ${grainColor};
     padding: 10px 0;
 
