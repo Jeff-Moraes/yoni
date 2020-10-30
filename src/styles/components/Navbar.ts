@@ -4,7 +4,7 @@ import { grainColor, mustardColor, marineBlueColor, darkAquaColor } from '../col
 
 export const Nav = styled.nav`
   z-index: 10;
-  width: 100vw;
+  width: 100%;
   height: 7.5vh;
   padding: 5px 20px;
 
@@ -13,6 +13,7 @@ export const Nav = styled.nav`
   align-items: center;
 
   background-color: ${grainColor};
+  border-bottom: 1px solid rgba(0,0,0,0.07);
 
   .logo a {
     z-index: 10;
@@ -61,12 +62,13 @@ export const DesktopMenu = styled.div`
   }
 
   .categories {
+    z-index: 10;
     position: absolute;
     display: flex;
     flex-direction: column;
     top: 50px;
     background-color: ${grainColor};
-    padding: 10px 0;
+    padding: 5px 0;
 
     a {
       padding: 10px 0;

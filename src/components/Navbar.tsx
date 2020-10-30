@@ -30,19 +30,19 @@ export default function Navbar() {
         el.subLinks ? (
           <div key={el.name}>
             <Link href={`/${el.slug}`}>
-              <a>{el.name}</a>
+              <a onClick={() => setShowMobileMenu(false)}>{el.name}</a>
             </Link>
             {
               el.subLinks.map(subCateg => ( 
                 <Link key={subCateg.slug} href={`/${el.slug}/${subCateg.slug}`}>
-                  <a className="subCateg">{subCateg.name}</a>
+                  <a className="subCateg" onClick={() => setShowMobileMenu(false)}>{subCateg.name}</a>
                 </Link>
               ))
             }
           </div>
         ) : (
           <Link key={el.name} href={`/${el.slug}`}>
-            <a>{el.name}</a>
+            <a onClick={() => setShowMobileMenu(false)}>{el.name}</a>
           </Link>
         ))
       )}
@@ -53,12 +53,12 @@ export default function Navbar() {
     <DesktopMenu>
       { linksMenu.map((el) => (
         el.subLinks ? (
-          <div key={el.name}>
-            <button key={el.name} onClick={() => setShowCategories(!showCategories)} >
+          <div key={el.name} onClick={() => setShowCategories(!showCategories)}>
+            <button key={el.name} >
               {el.name}
             </button>
             { showCategories && (
-              <div className="categories">
+              <div className="categories"> 
                 { categories.map(category => ( 
                   <Link key={category.slug} href={`/${el.slug}/${category.slug}`}>
                     <a className="category">{category.name}</a>
@@ -81,7 +81,7 @@ export default function Navbar() {
       { showMobileMenu && mobileMenu}
       <Nav>
         <Link href="/">
-          <div className={showMobileMenu ? "logo active" : "logo"}>
+          <div className={showMobileMenu ? "logo active" : "logo"} onClick={() => setShowMobileMenu(false)}>
             <a>
               <img src={`${process.env.NEXT_PUBLIC_SITE_URL}/images/yoni.svg`} alt="yoni logo" />
             </a>
