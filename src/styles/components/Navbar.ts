@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { grainColor, mustardColor, marineBlueColor, darkAquaColor } from '../colors';
+import { grainColor, mustardColor, marineBlueColor } from '../colors';
 
 export const Nav = styled.nav`
   z-index: 10;
   width: 100%;
-  height: 7.5vh;
+  height: 6.5vh;
   padding: 5px 20px;
 
   display: flex;
@@ -18,10 +18,11 @@ export const Nav = styled.nav`
   .logo a {
     z-index: 10;
     position: absolute;
-    width: 12vw;
+    width: 10vw;
+    min-width: 52px;
     display: inline-block;
     transform: translateX(0%);
-    transform: translateY(-10%);
+    transform: translateY(-20%);
 
     transition: transform 1s, width 1s;
 
@@ -33,6 +34,14 @@ export const Nav = styled.nav`
   .active a {
     width: 30vw;
     transform: translateX(100%);
+  }
+
+  @media (min-width: 768px) {
+    height: 10vh;
+
+    .logo a {
+      transform: translateY(-25%);
+    }
   }
 `;
 
@@ -80,7 +89,6 @@ export const DesktopMenu = styled.div`
       }
     }
   }
-
   
   @media (max-width: 768px) {
     display: none;
