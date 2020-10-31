@@ -14,9 +14,10 @@ export const FooterContainer = styled.footer`
     z-index: 10;
     position: absolute;
     width: 25vw;
+    min-width: 100px;
     max-width: 200px;
     display: inline-block;
-    transform: translate(-8vw, -6vh);
+    transform: translate(-8vw, -8vh);
     margin-left: 20px;
 
     img {
@@ -56,6 +57,10 @@ export const FooterContainer = styled.footer`
   }  
 
   @media (min-width: 768px) {
+    .logo a {
+      transform: translate(-8vw, -10vh);
+    }
+
     .footerLinks {
       div {
         img {
