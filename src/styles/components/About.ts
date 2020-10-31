@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { grainColor, mustardColor, blushColor, blueBerryColor } from '../colors';
+import { grainColor, mustardColor, blushColor } from '../colors';
 
 export const AboutContainer = styled.section<{ dropSrc: String }>`
   display: grid;
@@ -16,8 +16,10 @@ export const AboutContainer = styled.section<{ dropSrc: String }>`
 
     img {
       position: absolute;
-      top: -18px;
-      left: 20vw;
+      top: -30px;
+      left: 16vw;
+      width: 16vw;
+      min-width: 140px;
     }
 
     h1 {
@@ -32,7 +34,7 @@ export const AboutContainer = styled.section<{ dropSrc: String }>`
       font-size: 0.9rem;
       font-weight: 300;
       line-height: 1.2rem;
-      margin-top: 30px;
+      margin-top: 35px;
       margin-bottom: 20px;
     }
 
@@ -96,8 +98,8 @@ export const AboutContainer = styled.section<{ dropSrc: String }>`
       
       img {
         position: absolute;
-        top: -15px;
-        left: 13vw;
+        top: -50px;
+        left: 10vw;
       }
 
       h1 {

@@ -14,7 +14,7 @@ export default function Footer() {
       <Link href="/">
         <div className="logo">
           <a>
-            <img src={`${process.env.NEXT_PUBLIC_SITE_URL}/images/yoni.svg`} alt="yoni logo" />
+            <img src="https://res.cloudinary.com/dcnqq10ni/image/upload/v1604139926/yoni-images/yoni-logo_t5zyco.svg" alt="yoni logo" />
           </a>
         </div>
       </Link>

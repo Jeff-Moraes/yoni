@@ -7,7 +7,7 @@ export default function Sobre() {
         <h1>Sobre nós</h1>
       </div>
       <main>
-        <img src={`${process.env.NEXT_PUBLIC_SITE_URL}/images/yoni.svg`} alt="yoni logo" />
+        <img src="https://res.cloudinary.com/dcnqq10ni/image/upload/v1604139926/yoni-images/yoni-logo_t5zyco.svg" alt="yoni logo" />
         <div className="topContainer">
           <p>é uma palavra do sânscrito que significa:</p>
           <ul>

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <AboutContainer dropSrc="https://res.cloudinary.com/dcnqq10ni/image/upload/v1603918587/yoni-images/daydropbackground_cse1fg.jpg">
       <div className="titleContainer">
-        <img src={`${process.env.NEXT_PUBLIC_SITE_URL}/images/yoni.svg`} alt="yoni logo" />
+        <img src="https://res.cloudinary.com/dcnqq10ni/image/upload/v1604139926/yoni-images/yoni-logo_t5zyco.svg" alt="yoni logo" />
         <h1>Quem somos nós?</h1>
         <p>Nós da yoni somos um portal feito com todo o carinho por mulheres para mulheres, nos ajudando a crescer e se autocohecer de maneira leve e divertida!</p>
         <a href="/sobre">Saiba mais</a>
