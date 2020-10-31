@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { mustardColor, blueBerryColor } from '../colors';
+import { mustardColor, blueBerryColor, marineBlueColor } from '../colors';
 
 export const HeaderContainer = styled.header<{ src: String }>`
   width: 100%;
@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header<{ src: String }>`
   position: relative;
 
   .bgContainer {
-    width: 100vw;
+    width: 100%;
     height: 44vh;
     background-image: ${({src}) => `url(${src})`};
     background-size: cover;
@@ -29,6 +29,7 @@ export const HeaderContainer = styled.header<{ src: String }>`
     padding: 20px;
 
     h1 {
+      color: ${marineBlueColor};
       font-size: 1.5rem;
       margin-bottom: 20px;
     }
