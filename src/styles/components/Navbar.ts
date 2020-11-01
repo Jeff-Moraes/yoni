@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { grainColor, mustardColor, marineBlueColor } from '../colors';
+import { grainColor, blushColor, mustardColor, marineBlueColor } from '../colors';
 
 export const Nav = styled.nav`
   z-index: 10;
@@ -23,6 +23,7 @@ export const Nav = styled.nav`
     display: inline-block;
     transform: translateX(0%);
     transform: translateY(-20%);
+    cursor: pointer;
 
     transition: transform 1s, width 1s;
 
@@ -55,6 +56,11 @@ export const DesktopMenu = styled.div`
     color: ${marineBlueColor};
     padding: 10px;
     margin-right: 5vw;
+    transition: color 0.3s;
+
+    &:hover {
+      color: ${blushColor};
+    }
   }
 
   & > a:last-child {
