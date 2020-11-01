@@ -29,8 +29,12 @@ export default function Footer() {
           ))}
         </ul>
         <div>
-          <img src="https://res.cloudinary.com/dcnqq10ni/image/upload/v1604010995/yoni-images/Vector_1_aldc1m.svg" alt="Facebook icon"/>
-          <img src="https://res.cloudinary.com/dcnqq10ni/image/upload/v1604010996/yoni-images/Vector_hdmuvt.svg" alt="Instagram icon"/>
+          <a href="https://www.facebook.com/">
+            <img src="https://res.cloudinary.com/dcnqq10ni/image/upload/v1604010995/yoni-images/Vector_1_aldc1m.svg" alt="Facebook icon"/>
+          </a>
+          <a href="https://www.instagram.com/">
+            <img src="https://res.cloudinary.com/dcnqq10ni/image/upload/v1604010996/yoni-images/Vector_hdmuvt.svg" alt="Instagram icon"/>
+          </a>
         </div>
       </div>
     </FooterContainer>

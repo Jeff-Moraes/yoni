@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { grainColor, marineBlueColor } from '../colors';
+import { grainColor, marineBlueColor, blushColor } from '../colors';
 
 export const FooterContainer = styled.footer`
   position: relative;
@@ -19,6 +19,7 @@ export const FooterContainer = styled.footer`
     display: inline-block;
     transform: translate(-8vw, -8vh);
     margin-left: 20px;
+    cursor: pointer;
 
     img {
       width: 100%;
@@ -30,15 +31,20 @@ export const FooterContainer = styled.footer`
     flex-direction: column;
 
     div {
-      img {
-        & + img {
+      a {
+        transition: opacity 0.3s;
+        & + a {
           margin-left: 20px;
+        }
+        &:hover {
+          opacity: 0.8;
         }
       }
     }
   }
 
   ul {
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     margin: 20px 0 30px;
@@ -52,6 +58,11 @@ export const FooterContainer = styled.footer`
       a {
         font-size: 1rem;
         color: ${marineBlueColor};
+        transition: color 0.3s;
+
+        &:hover {
+          color: ${blushColor};
+        }
       }
     }
   }  
