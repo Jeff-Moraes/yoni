@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { blueBerryColor, marineBlueColor } from '../colors';
+import { blueBerryColor, marineBlueColor, blushColor } from '../colors';
 
 export const PostBoxContainer = styled.div`
   width: 100%;
@@ -10,6 +10,16 @@ export const PostBoxContainer = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
+
+  transition: border 0.3s;
+
+  &:hover {
+    border: 1px solid ${blushColor};
+
+    .postInfoContainer h2 {
+      color: ${blushColor};
+    }
+  }
 
   img {
     width: 100%;
@@ -25,6 +35,8 @@ export const PostBoxContainer = styled.div`
     h2 {
       font-size: 1.6rem;
       color: ${marineBlueColor};
+
+      transition: color 0.3s;
     }
 
     .postAuthorContainer {
