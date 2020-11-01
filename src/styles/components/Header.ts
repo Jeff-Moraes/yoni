@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
-import { mustardColor, blueBerryColor, marineBlueColor } from '../colors';
+import { mustardColor, blueBerryColor, marineBlueColor, blushColor } from '../colors';
 
 export const HeaderContainer = styled.header<{ src: String }>`
   width: 100%;
   height: 100%;
   position: relative;
+
+  a:hover {
+    .titleContainer {
+      h1 {
+        color: ${blushColor};
+      }
+    }
+  }
 
   .bgContainer {
     width: 100%;
@@ -22,6 +30,7 @@ export const HeaderContainer = styled.header<{ src: String }>`
       margin: 20px;
       font-size: 0.8rem;
       color: ${mustardColor};
+      transition: color 0.3s;
     }
   }
 
@@ -32,6 +41,7 @@ export const HeaderContainer = styled.header<{ src: String }>`
       color: ${marineBlueColor};
       font-size: 1.5rem;
       margin-bottom: 20px;
+      transition: color 0.3s;
     }
 
     div {

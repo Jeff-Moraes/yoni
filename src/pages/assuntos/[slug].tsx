@@ -133,9 +133,6 @@ export default function Post() {
   
   return (
     <CategoryContainer>
-      <div>
-        <h1>Assuntos</h1>
-      </div>
       <div className="categoriesIcons">
         { categories.map(category => (
           <Link href={category.slug} key={category.slug}>
