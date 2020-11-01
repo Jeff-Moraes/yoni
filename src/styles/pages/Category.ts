@@ -7,24 +7,11 @@ export const CategoryContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  > div {
-    width: 100%;
-    padding: 2vh 0;
-    background-color: ${grainColor};
-
-    h1 {
-      font-size: 1rem;
-      text-align: center;
-      color: ${blushColor};
-    }
-  }
-
   .categoriesIcons {
     display: flex;
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
     background-color: ${grainColor};
-    border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     padding: 20px 0;
 
@@ -34,6 +21,10 @@ export const CategoryContainer = styled.div`
       align-items: center;
       padding-left: 15px;
       text-align: center;
+
+      &:last-of-type {
+        padding-right: 20px;
+      }
 
       p {
         font-size: 0.7rem;
@@ -46,6 +37,12 @@ export const CategoryContainer = styled.div`
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 10px;
+      cursor: pointer;
+      transition: border 0.15s;
+
+      &:hover {
+        border: 4px solid ${blushColor};
+      }
     }
 
     .selectedCategory {
