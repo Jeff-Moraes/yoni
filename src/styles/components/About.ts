@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 import { grainColor, mustardColor, blushColor } from '../colors';
 
@@ -49,6 +50,11 @@ export const AboutContainer = styled.section<{ dropSrc: String }>`
       font-weight: 500;
       text-align: center;
       padding-top: 11px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: ${lighten(0.05, blushColor)};
+      }
     }
   }
 
