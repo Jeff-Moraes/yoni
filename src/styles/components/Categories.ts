@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { grainColor, marineBlueColor } from '../colors';
+import { grainColor, marineBlueColor, blushColor } from '../colors';
 
 export const CategoriesContainer = styled.div`
   padding: 100px 20px 0;
@@ -55,6 +55,12 @@ export const CategoryImage = styled.div<{ imgSrc: String }>`
 
   display: flex;
 
+  &:hover {
+    h2 {
+      color: ${blushColor};
+    }
+  }
+
   h2 {
     width: 100%;
     align-self: flex-end;
@@ -64,5 +70,6 @@ export const CategoryImage = styled.div<{ imgSrc: String }>`
     font-size: 0.9rem;
     text-align: center;
     color: ${marineBlueColor};
+    transition: color 0.3s;
   }
 `;

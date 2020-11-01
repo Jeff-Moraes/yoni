@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { marineBlueColor, mustardColor, blueBerryColor } from '../colors';
+import { marineBlueColor, blushColor, mustardColor, blueBerryColor } from '../colors';
 
 export const HighlightsContainer = styled.section`
   width: 100%;
@@ -21,9 +21,10 @@ export const HighlightsContainer = styled.section`
     } */
 
     a {
-      width: 155px;
+      width: 100%;
       height: 100%;
       border: 1px solid rgba(0,0,0,0.2);
+      transition: border 0.3s;
 
       &:first-of-type {
         margin-left: 20px;
@@ -31,6 +32,13 @@ export const HighlightsContainer = styled.section`
 
       a:last-of-type {
         margin-right: 20px;
+      }
+
+      &:hover {
+        border: 1px solid ${blushColor};
+        h2 {
+          color: ${blushColor};
+        }
       }
     }
 
@@ -72,6 +80,8 @@ export const HighlightsContainer = styled.section`
         line-height: 1rem;
         color: ${marineBlueColor};
         margin: 5px 0;
+
+        transition: color 0.3s;
       }
 
       .postAuthorContainer {
